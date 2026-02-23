@@ -21,7 +21,7 @@ test('check paragraph contains text', async ({ page }) => {
   await page.goto('https://example.com');
 
   // Find element by partial text
-  const paragraph = page.getByText('for use in illustrative examples');
+  const paragraph = page.getByText('This domain is for use in documentation');
   await expect(paragraph).toBeVisible();
 });
 
@@ -29,7 +29,7 @@ test('click a link and check new URL', async ({ page }) => {
   await page.goto('https://example.com');
 
   // Click the "More information" link
-  await page.getByRole('link', { name: 'More information...' }).click();
+  await page.getByRole('link', { name: 'Learn more' }).click();
 
   // After clicking, the URL should change to iana.org
   await expect(page).toHaveURL(/iana\.org/);
